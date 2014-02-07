@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.API", "OutOfSpace.API\OutOfSpace.API.csproj", "{FB6C503C-C02D-48A9-B92C-449159F57A42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web", "OutOfSpace.API\OutOfSpace.Web.csproj", "{FB6C503C-C02D-48A9-B92C-449159F57A42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
