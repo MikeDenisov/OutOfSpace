@@ -16,6 +16,7 @@ namespace OutOfSpace.API.Controllers
     {
         private readonly DataContext context = new DataContext();
 
+        [HttpGet]
         [Route("api/spaceObject")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
@@ -23,6 +24,18 @@ namespace OutOfSpace.API.Controllers
             return (from star in this.context.Stars
                 select star).ToList();
 
+        }
+
+        
+        [HttpPost]
+        [Route("api/spaceObject")]
+        public void PostSpaceObject(SpaceObject spaceObject)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Stars.Add(spaceObject);
+                context.SaveChanges();
+            }
         }
  
     }
