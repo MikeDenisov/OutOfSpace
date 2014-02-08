@@ -21,6 +21,6 @@ namespace OutOfSpace.API.Models
         public double Lng { get; set; }
         public double Range { get; set; }
         public double Tilt { get; set; }
-        public Carma Carma { get; set; }
+        //public Carma Carma { get; set; }
     }
 }
