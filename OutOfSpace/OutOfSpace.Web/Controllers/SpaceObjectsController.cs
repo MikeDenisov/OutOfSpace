@@ -12,43 +12,90 @@ using System.Linq;
 
 namespace OutOfSpace.API.Controllers
 {
+    [RoutePrefix("api/spaceObjects")]
     public class SpaceObjectsController : ApiController
     {
-        private readonly DataContext context = new DataContext();
-
+        private readonly IGenericRepository<SpaceObject> repository = new GenericRepository<SpaceObject>(new DataContext());
+        
         [HttpGet]
-        [Route("api/spaceObjects")]
+        [Route("")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
-            //context.Stars.
-            return (from star in this.context.Stars
-                select star).ToList();
+            return repository.All();
+        }
 
+        [HttpGet]
+        [Route("{id}")]
+        public SpaceObject GetSpaceObject(Int64 id)
+        {
+            var spaceObj = repository.GetById(id);
+            if (spaceObj != null)
+            {
+                return spaceObj;
+            }
+            throw new HttpResponseException(HttpStatusCode.NotFound);
         }
 
         
         [HttpPost]
-        [Route("api/spaceObject")]
-        public void PostSpaceObject(SpaceObject spaceObject)
+        [Route("")]
+        public HttpResponseMessage PostSpaceObject(SpaceObject spaceObject)
         {
             if (ModelState.IsValid)
             {
-                context.Stars.Add(spaceObject);
-                context.SaveChanges();
+                try
+                {
+                    var createdObject = repository.Add(spaceObject);
+                    return Request.CreateResponse(HttpStatusCode.Created, createdObject);                                        
+                }
+                catch (Exception e)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message);
+                }
             }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ModelState.Values.SelectMany(v=>v.Errors).ToString());
         }
 
         [HttpPut]
-        [Route("api/spaceObject")]
-        public void PutSpaceObject(SpaceObject spaceObject)
+        [Route("{id}")]
+        public HttpResponseMessage PutSpaceObject(SpaceObject spaceObject)
         {
             if (ModelState.IsValid)
             {
-                var objectToUpdate = context.Stars.First(s => s.Id == spaceObject.Id);
-                if (objectToUpdate != null)
+                try
                 {
+                    repository.Update(spaceObject);
+                    return Request.CreateResponse(HttpStatusCode.NoContent);
+                }
+                catch (Exception e)
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message);
                 }
             }
+            return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ModelState.Values.SelectMany(v => v.Errors).ToString());
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public HttpResponseMessage DeleteSpaceObject(Int64 id)
+        {
+            if (id > 0)
+            {
+                var spaceObject = repository.GetById(id);
+                if (spaceObject != null)
+                {
+                    try
+                    {
+                        repository.Delete(spaceObject);
+                        return Request.CreateResponse(HttpStatusCode.OK);
+                    }
+                    catch (Exception e)
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message);
+                    }
+                }
+            }
+            throw new HttpResponseException(HttpStatusCode.NotFound);
         }
     }
 }
