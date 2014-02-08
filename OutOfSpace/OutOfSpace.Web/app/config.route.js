@@ -1,11 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('OutOfSpaceApp');
+    var app = angular.module('app');
 
     // Collect the routes
     app.constant('routes', getRoutes());
-
+    
     // Configure the routes and route resolvers
     app.config(['$routeProvider', 'routes', routeConfigurator]);
     function routeConfigurator($routeProvider, routes) {
@@ -13,12 +13,11 @@
         routes.forEach(function (r) {
             $routeProvider.when(r.url, r.config);
         });
-        $routeProvider.otherwise({ redirectTo: '/' });
+        $routeProvider.otherwise({ redirectTo: '/cards' });
     }
 
     // Define the routes 
     function getRoutes() {
-        console.log('boom routes');
         return [
             {
                 url: '/',

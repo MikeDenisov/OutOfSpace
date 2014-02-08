@@ -22,21 +22,21 @@
             {
                 url: '/',
                 config: {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    title: 'dashboard',
+                    templateUrl: 'app/cards/cards.html',
+                    title: 'cards',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: '<i class="fa fa-cards"></i> Cards'
                     }
                 }
             }, {
-                url: '/admin',
+                url: '/skymap',
                 config: {
-                    title: 'admin',
-                    templateUrl: 'app/admin/admin.html',
+                    title: 'skymap',
+                    templateUrl: 'app/skymap/skymap.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: '<i class="fa fa-lock"></i> Skymap'
                     }
                 }
             }

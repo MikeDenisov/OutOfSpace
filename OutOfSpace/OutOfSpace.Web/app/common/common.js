@@ -1,10 +1,11 @@
-﻿(function () {
+(function () {
     'use strict';
 
     // Define the common module 
     // Contains services:
     //  - common
     //  - logger
+    //  - spinner
     var commonModule = angular.module('common', []);
 
     // Must configure the common service and set its 
@@ -13,6 +14,7 @@
         this.config = {
             // These are the properties we need to set
             //controllerActivateSuccessEvent: '',
+            //spinnerToggleEvent: ''
         };
 
         this.$get = function () {
@@ -74,7 +76,7 @@
                 // translates to ...
                 // vm.filteredSessions 
                 //      = vm.sessions.filter(function(item( { returns vm.sessionFilter (item) } );
-                viewmodel[filteredList] = viewmodel[list].filter(function (item) {
+                viewmodel[filteredList] = viewmodel[list].filter(function(item) {
                     return viewmodel[filter](item);
                 });
             };
@@ -85,7 +87,7 @@
                 var filterInputTimeout;
 
                 // return what becomes the 'applyFilter' function in the controller
-                return function (searchNow) {
+                return function(searchNow) {
                     if (filterInputTimeout) {
                         $timeout.cancel(filterInputTimeout);
                         filterInputTimeout = null;

@@ -1,42 +1,38 @@
 ﻿(function () {
     'use strict';
-    console.log('booom cards');
-    var controllerId = 'cards';
-    angular.module('OutOfSpaceApp').controller(controllerId, ['common', 'dataservice', cards]);
-    console.log('booom after cards');
+    var controllerId = 'dashboard';
+    angular.module('app').controller(controllerId, ['common', 'datacontext', dashboard]);
 
-    function cards(common, dataservice) {
-        console.log('booom cards cards');
+    function dashboard(common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
         var vm = this;
         vm.news = {
-            title: 'Cards motherfucker!',
-            description: 'JUST CARDS!'
+            title: 'Hot Towel Angular',
+            description: 'Hot Towel Angular is a SPA template for Angular developers.'
         };
-        vm.cardsCount = 0;
-        vm.cards = [];
-        vm.title = 'Cards';
+        vm.messageCount = 0;
+        vm.people = [];
+        vm.title = 'Dashboard';
 
         activate();
 
         function activate() {
-            console.log('booom cards activate');
-            var promises = [getCardsCount(), getCards()];
+            var promises = [getMessageCount(), getPeople()];
             common.activateController(promises, controllerId)
-                .then(function () { log('Activated Cards View'); });
+                .then(function () { log('Activated Dashboard View'); });
         }
 
-        function getCardsCount() {
-            return dataservice.getCardsCount().then(function (data) {
-                return vm.cardsCount = data;
+        function getMessageCount() {
+            return datacontext.getMessageCount().then(function (data) {
+                return vm.messageCount = data;
             });
         }
 
-        function getCards() {
-            return dataservice.getCards().then(function (data) {
-                return vm.cards = data;
+        function getPeople() {
+            return datacontext.getPeople().then(function (data) {
+                return vm.people = data;
             });
         }
     }
