@@ -2,7 +2,7 @@
     <section class="matter">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <!--<div class="col-md-6">
                     <div class="widget wviolet">
                         <div data-cc-widget-header title="People"
                              allow-collapse="true"></div>
@@ -30,13 +30,15 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="widget wgreen">
-                        <div data-cc-widget-header title="{{vm.news.title}}"
-                             allow-collapse="true"></div>
+                </div>-->
+                <div class="col-md-6" data-ng-repeat="c in vm.cards">
+                    <div class="widget">
+                        <div data-cc-widget-header title="{{c.name}}"
+                             allow-collapse="false"></div>
                         <div class="widget-content text-center text-info">
-                            <small>{{vm.news.description}}</small>
+                            <small>{{c.description}}</small>
+                            <small>{{c.lat}}</small>
+                            <small>{{c.lng}}</small>
                         </div>
                         <div class="widget-foot">
                             <div class="clearfix"></div>

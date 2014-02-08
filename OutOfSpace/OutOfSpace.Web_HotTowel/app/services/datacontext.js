@@ -18,13 +18,11 @@
 
         function getCards() {
             var cards = [
-                { firstName: 'John', lastName: 'Papa', age: 25, location: 'Florida' },
-                { firstName: 'Ward', lastName: 'Bell', age: 31, location: 'California' },
-                { firstName: 'Colleen', lastName: 'Jones', age: 21, location: 'New York' },
-                { firstName: 'Madelyn', lastName: 'Green', age: 18, location: 'North Dakota' },
-                { firstName: 'Ella', lastName: 'Jobs', age: 18, location: 'South Dakota' },
-                { firstName: 'Landon', lastName: 'Gates', age: 11, location: 'South Carolina' },
-                { firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
+                { alt: 0, description: 'The star of death', heading: 0, id: 1, lat: 10.4748333333333, lng: 9.96954166666666, name: 'Death Star', range: 7337, tilt: 0 },
+                { alt: 0, description: 'The star of life', heading: 0, id: 2, lat: 10.4748333333333, lng: 9.96954166666666, name: 'Life Star', range: 7337, tilt: 0 },
+                { alt: 0, description: 'The star of happieness', heading: 0, id: 3, lat: 10.4748333333333, lng: 9.96954166666666, name: 'Happieness Star', range: 7337, tilt: 0 },
+                { alt: 0, description: 'The star of love', heading: 0, id: 4, lat: 10.4748333333333, lng: 9.96954166666666, name: 'Love Star', range: 7337, tilt: 0 },
+                { alt: 0, description: 'The star of health', heading: 0, id: 5, lat: 10.4748333333333, lng: 9.96954166666666, name: 'Health Star', range: 7337, tilt: 0 },
             ];
             return $q.when(cards);
         }
