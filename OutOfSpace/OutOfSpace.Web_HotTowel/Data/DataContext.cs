@@ -5,13 +5,15 @@ using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using OutOfSpace.API.Models;
+using OutOfSpace.Web.Enums;
+using OutOfSpace.Web.Models;
 
-namespace OutOfSpace.API.Data
+namespace OutOfSpace.Web.Data
 {
     public class DataContext : DbContext, IDbContext
     {
         public DbSet<SpaceObject> Stars { get; set; }
+        public DbSet<Carma> Carma { get; set; }
 
         public static string ConnectionStringName
         {get
@@ -53,7 +55,12 @@ namespace OutOfSpace.API.Data
                     Lng =  9.96954166666666,
                     Name = "DEATH STAR",
                     Range = 7337,
-                    Tilt = 0
+                    Tilt = 0,
+                    Carma = new Carma()
+                    {
+                        Amount = 0,
+                        Rate = CarmaRates.SpaceObject
+                    }
                 }
             };
 

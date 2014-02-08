@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
-using OutOfSpace2.Web.Models;
 
-namespace OutOfSpace.API.Models
+namespace OutOfSpace.Web.Models
 {
     public class SpaceObject
     {

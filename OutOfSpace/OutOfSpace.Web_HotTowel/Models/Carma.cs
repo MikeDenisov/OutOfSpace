@@ -1,24 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using OutOfSpace2.Web.Models.Interfaces;
+using OutOfSpace.Web.Models.Interfaces;
 
-namespace OutOfSpace2.Web.Models
+namespace OutOfSpace.Web.Models
 {
-    public class Carma: IHasCarma
+    public class Carma
     {
-        public int Amount { get; set; }
-        public IHasCarma Parent { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Int64 Id { get; set; }
+        public float Amount { get; set; }
+        public Carma Parent { get; set; }
+        public float Rate { get; set; }
 
-        public int Increase()
+        public float Increase()
         {
-            return ++this.Amount;
+            return this.ChangeValue(1);
         }
 
-        public int Decrease()
+        public float Decrease()
         {
-            return --this.Amount;
+            return this.ChangeValue(-1);
+        }
+
+        public float ChangeValue(float value)
+        {
+            Amount += value;
+            if (Parent != null)
+            {
+                Parent.ChangeValue(value * Rate);
+            }
+            return Amount;
         }
     }
 }

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Routing;
-using OutOfSpace.API.Data;
-using OutOfSpace.API.Models;
-using System.Linq;
+using OutOfSpace.Web.Data;
+using OutOfSpace.Web.Models;
 
-namespace OutOfSpace.API.Controllers
+namespace OutOfSpace.Web.Controllers
 {
     [RoutePrefix("api/spaceObjects")]
     public class SpaceObjectsController : ApiController
@@ -20,7 +19,7 @@ namespace OutOfSpace.API.Controllers
         [Route("")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
-            return repository.All();
+            return ((DbSet<SpaceObject>)repository.All()).Include(p=>p.Carma);
         }
 
         [HttpGet]

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using OutOfSpace.Web.App_Start;
 
-namespace OutOfSpace2.Web
+namespace OutOfSpace.Web
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

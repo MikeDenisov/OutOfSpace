@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OutOfSpace2.Web</RootNamespace>
-    <AssemblyName>OutOfSpace2.Web</AssemblyName>
+    <RootNamespace>OutOfSpace.Web</RootNamespace>
+    <AssemblyName>OutOfSpace.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -184,6 +184,7 @@
     <Compile Include="Data\GenericRepository.cs" />
     <Compile Include="Data\IDbContext.cs" />
     <Compile Include="Data\IGenericRepository.cs" />
+    <Compile Include="Enums\CarmaRates.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
