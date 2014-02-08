@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using OutOfSpace2.Web.Models;
 
 namespace OutOfSpace.API.Models
 {
@@ -20,5 +21,6 @@ namespace OutOfSpace.API.Models
         public double Lng { get; set; }
         public double Range { get; set; }
         public double Tilt { get; set; }
+        public Carma Carma { get; set; }
     }
 }

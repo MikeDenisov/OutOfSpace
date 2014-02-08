@@ -187,6 +187,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carma.cs" />
+    <Compile Include="Models\Interfaces\IHasCarma.cs" />
     <Compile Include="Models\SpaceObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
