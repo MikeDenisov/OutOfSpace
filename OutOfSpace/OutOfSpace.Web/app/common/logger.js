@@ -1,6 +1,6 @@
-﻿(function () {
+(function () {
     'use strict';
-
+    
     angular.module('common').factory('logger', ['$log', logger]);
 
     function logger($log) {
@@ -55,13 +55,13 @@
             write(source, message, data);
             if (showToast) {
                 if (toastType === 'error') {
-                    //toastr.error(message);
+                    toastr.error(message);
                 } else if (toastType === 'warning') {
-                    //toastr.warning(message);
+                    toastr.warning(message);
                 } else if (toastType === 'success') {
-                    //toastr.success(message);
+                    toastr.success(message);
                 } else {
-                    //toastr.info(message);
+                    toastr.info(message);
                 }
             }
         }

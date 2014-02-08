@@ -1,20 +1,20 @@
 ﻿(function () {
     'use strict';
-    var controllerId = 'admin';
-    angular.module('app').controller(controllerId, ['common', admin]);
+    var controllerId = 'skymap';
+    angular.module('app').controller(controllerId, ['common', skymap]);
 
-    function admin(common) {
+    function skymap(common) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
         var vm = this;
-        vm.title = 'Admin';
+        vm.title = 'Skymap';
 
         activate();
 
         function activate() {
             common.activateController([], controllerId)
-                .then(function () { log('Activated Admin View'); });
+                .then(function () { log('Activated Skymap View'); });
         }
     }
 })();
