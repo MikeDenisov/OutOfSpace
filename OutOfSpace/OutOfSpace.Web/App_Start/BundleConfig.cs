@@ -14,6 +14,8 @@ namespace OutOfSpace.API
             bundles.Add(new ScriptBundle("~/bundles/libs").Include(
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/angular.js",
+                        "~/Scripts/angular-animate.js",
+                        "~/Scripts/angular-sanitize.js",
                         "~/Scripts/angular-route.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(

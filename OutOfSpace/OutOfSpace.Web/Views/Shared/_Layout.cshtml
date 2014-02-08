@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="OutOfSpaceApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,10 +11,10 @@
     <header>
         Out OF Space (Header)
     </header>
-    @RenderBody()
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/libs")
     @RenderSection("scripts", required: false)
+
+    @RenderBody()
 </body>
 </html>

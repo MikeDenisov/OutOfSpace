@@ -1,3 +1,19 @@
-﻿<div id="body">
+﻿<div id="stars">
     Put stars here
+    <div data-ng-include="'/app/layout/shell.html'"></div>
 </div>
+<!-- Bootstrapping -->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+<script src="app/config.route.js"></script>
+
+<!-- common Modules -->
+<script src="app/common/common.js"></script>
+<script src="app/common/logger.js"></script>
+
+<!-- app -->
+<script src="app/cards/cards.js"></script>
+<script src="app/skymap/skymap.js"></script>
+
+<!-- app Services -->
+<script src="app/services/dataservice.js"></script>
