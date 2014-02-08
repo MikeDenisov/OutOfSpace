@@ -9,7 +9,7 @@ using OutOfSpace.API.Models;
 
 namespace OutOfSpace.API.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : DbContext, IDbContext
     {
         public DbSet<SpaceObject> Stars { get; set; }
 

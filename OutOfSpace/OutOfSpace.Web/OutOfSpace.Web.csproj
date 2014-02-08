@@ -204,6 +204,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SpaceObjectsController.cs" />
     <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\GenericRepository.cs" />
+    <Compile Include="Data\IDbContext.cs" />
+    <Compile Include="Data\IGenericRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
