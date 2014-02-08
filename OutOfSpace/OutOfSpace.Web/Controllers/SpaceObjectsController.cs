@@ -17,7 +17,7 @@ namespace OutOfSpace.API.Controllers
         private readonly DataContext context = new DataContext();
 
         [HttpGet]
-        [Route("api/spaceObject")]
+        [Route("api/spaceObjects")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
             //context.Stars.
@@ -37,6 +37,18 @@ namespace OutOfSpace.API.Controllers
                 context.SaveChanges();
             }
         }
- 
+
+        [HttpPut]
+        [Route("api/spaceObject")]
+        public void PutSpaceObject(SpaceObject spaceObject)
+        {
+            if (ModelState.IsValid)
+            {
+                var objectToUpdate = context.Stars.First(s => s.Id == spaceObject.Id);
+                if (objectToUpdate != null)
+                {
+                }
+            }
+        }
     }
 }

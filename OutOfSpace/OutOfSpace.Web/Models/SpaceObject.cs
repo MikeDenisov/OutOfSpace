@@ -11,7 +11,7 @@ namespace OutOfSpace.API.Models
     {
         //[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public Int64 Id { get; set; }
         public string Name { get; set; }
         public double Alt { get; set; }
         public string Description { get; set; }
