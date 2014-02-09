@@ -1,14 +1,19 @@
-﻿(function () {
-    'use strict';
+﻿function initGoogleEarth () {
+//    'use strict';
     console.log('im in');
     var ge;
-    google.load("earth", "1", { "other_params": "sensor=false" });
+    //var $q = common.$q;
+    //google.load("earth", "1", { "other_params": "sensor=false", "callback": function () { console.log('callback fired') } })
+    //;
     function init() {
-        google.earth.createInstance('skymap', initCB, failureCB);
+        //q.when()
+        console.log('init');
+        return google.earth.createInstance('skymap', initCB, failureCB);
     }
     function failureCB(errorCode) {
         //TODO: error handling
         console.log("Error in goole.earth.createInstance()", errorCode);
+        //init();
     }
     function initCB(instance) {
         ge = instance;
@@ -23,5 +28,15 @@
 
         ge.getWindow().setVisibility(true);
     }
-    google.setOnLoadCallback(init);
-})();
+    //google.load("earth", "1", { "other_params": "sensor=false" }).done(function () {
+    //    google.setOnLoadCallback(init);
+    //});
+
+
+    //google.setOnLoadCallback(
+        init();
+        //);
+    //setTimeout(init, 2000);
+
+}
+//)();

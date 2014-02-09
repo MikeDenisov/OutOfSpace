@@ -3,7 +3,7 @@
     var controllerId = 'skymap';
     angular.module('app').controller(controllerId, ['common', skymap]);
 
-    //initGoogleEarth();
+    
 
     function skymap(common) {
         var getLogFn = common.logger.getLogFn;
@@ -16,7 +16,10 @@
 
         function activate() {
             common.activateController([], controllerId)
-                .then(function () { log('Activated Skymap View'); });
+                .then(function () {
+                    log('Activated Skymap View');
+                    initGoogleEarth();
+                });
         }
     }
 })();
