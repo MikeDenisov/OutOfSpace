@@ -61,7 +61,7 @@ namespace OutOfSpace.Web.Data
                     Tilt = 0,
                     Carma = new Carma()
                     {
-                        Amount = 0,
+                        Amount = 12,
                         Rate = CarmaRates.SpaceObject
                     },
                     Photos = new List<Photo>()
@@ -79,7 +79,7 @@ namespace OutOfSpace.Web.Data
                         {
                             Carma = new Carma()
                             {
-                                Amount = 0,
+                                Amount = 17,
                                 Rate = CarmaRates.Photo
                             },
                             Url = "http://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e2017d3fdabf1c970c-pi"
@@ -99,7 +99,7 @@ namespace OutOfSpace.Web.Data
                     Tilt = 0,
                     Carma = new Carma()
                     {
-                        Amount = 0,
+                        Amount = 4,
                         Rate = CarmaRates.SpaceObject
                     },
                     Photos = new List<Photo>()
@@ -108,7 +108,7 @@ namespace OutOfSpace.Web.Data
                         {
                             Carma = new Carma()
                             {
-                                Amount = 0,
+                                Amount = 1,
                                 Rate = CarmaRates.Photo
                             },
                             Url = "http://jwst.nasa.gov/ImagesContent/heic0706a.jpg"
@@ -128,7 +128,7 @@ namespace OutOfSpace.Web.Data
                     Tilt = 0,
                     Carma = new Carma()
                     {
-                        Amount = 0,
+                        Amount = 7,
                         Rate = CarmaRates.SpaceObject
                     },
                     Photos = new List<Photo>()
@@ -137,7 +137,7 @@ namespace OutOfSpace.Web.Data
                         {
                             Carma = new Carma()
                             {
-                                Amount = 0,
+                                Amount = 3,
                                 Rate = CarmaRates.Photo
                             },
                             Url = "http://upload.wikimedia.org/wikipedia/commons/8/80/NGC_2818_by_the_Hubble_Space_Telescope.jpg"
@@ -157,7 +157,7 @@ namespace OutOfSpace.Web.Data
                     Tilt = 0,
                     Carma = new Carma()
                     {
-                        Amount = 0,
+                        Amount = 3,
                         Rate = CarmaRates.SpaceObject
                     },
                     Photos = new List<Photo>()
@@ -166,7 +166,7 @@ namespace OutOfSpace.Web.Data
                         {
                             Carma = new Carma()
                             {
-                                Amount = 0,
+                                Amount = 6,
                                 Rate = CarmaRates.Photo
                             },
                             Url = "http://www.stepbystep.com/wp-content/uploads/2013/04/Difference-between-Atmosphere-and-Space1.jpg"
