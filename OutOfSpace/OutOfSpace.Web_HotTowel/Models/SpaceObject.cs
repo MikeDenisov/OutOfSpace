@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OutOfSpace.Web.Models
@@ -10,6 +11,7 @@ namespace OutOfSpace.Web.Models
         public Int64 Id { get; set; }
         public string Name { get; set; }
         public double Alt { get; set; }
+        public int Alt_enum { get; set; }
         public string Description { get; set; }
         public double Heading { get; set; }
         public double Lat { get; set; }
@@ -17,5 +19,6 @@ namespace OutOfSpace.Web.Models
         public double Range { get; set; }
         public double Tilt { get; set; }
         public Carma Carma { get; set; }
+        public ICollection<Photo> Photos { get; set; } 
     }
 }

@@ -4,7 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using System.Web.Security;
 using OutOfSpace.Web.Data;
 using OutOfSpace.Web.Models;
 
@@ -19,7 +21,7 @@ namespace OutOfSpace.Web.Controllers
         [Route("")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
-            return ((DbSet<SpaceObject>)repository.All()).Include(p=>p.Carma);
+            return ((DbSet<SpaceObject>)repository.All()).Include(p => p.Carma).Include(p => p.Photos);
         }
 
         [HttpGet]
