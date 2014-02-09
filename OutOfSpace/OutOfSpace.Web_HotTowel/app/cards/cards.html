@@ -33,19 +33,18 @@
                 </div>-->
                 <div class="col-md-4 flip-container" data-ng-repeat="c in vm.cards">
                     <div class="widget {{ c.flipped ? 'flipped' : '' }}" id="card">
-                        <a ng-click=" vm.onheaderclick(c)">
-                            <div data-cc-widget-header title="{{c.name}}"
-                                 allow-collapse="false"></div>
+                        <a ng-click=" vm.onHeaderClick(c)">
+                            <div data-cc-widget-header title="{{c.name}}" carma="{{c.carma.amount}}"
+                                 allow-collapse="false">
+                            </div>
                         </a>
                         <div class="widget-content text-center text-info front">
                             <small>{{c.description}}</small>
-                            <small>{{c.lat}}</small>
-                            <small>{{c.lng}}</small>
+                            <img src="{{c.photos[0].url}}" style="width: 258px;" alt="альтернативный текст">
                         </div>
                         <div class="widget-content text-center text-info back">
-                            <small>{{c.id}}</small>
-                            <small>{{c.range}}</small>
-                            <small>{{c.tilt}}</small>
+                            <small>{{c.lat}}</small>
+                            <small>{{c.lng}}</small>
                         </div>
                         <div class="widget-foot" id="flipper">
                             <a id="flip" ng-click="vm.onFlipCard(c)">{{ c.flipped ? 'Flip the card back' : 'Flip the card' }}</a>

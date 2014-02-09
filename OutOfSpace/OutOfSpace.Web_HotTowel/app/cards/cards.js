@@ -1,19 +1,30 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'cards';
-    angular.module('app').controller(controllerId, ['$http', 'common', 'datacontext', 'crossdatacontext', cards]);
+    angular.module('app').controller(controllerId, ['$scope', '$modal', '$http', 'common', 'datacontext', 'crossdatacontext', cards]);
 
-    function cards($http, common, datacontext, crossdatacontext) {
+    function cards($scope, $modal, $http, common, datacontext, crossdatacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
+
+
+        var vm = this;
 
         $http.get('http://localhost:40833/api/spaceObjects').success(function (data) {
             //$scope.greeting = data;
             console.log(data);
+            return vm.cards = data;
         });
 
+        vm.addObject = function () {
+            //var d = $dialog.dialog($scope.opts);
+            //d.open().then(function (result) {
+            //    if (result) {
+            //        alert('dialog closed with result: ' + result);
+            //    }
+            //});
+        };
 
-        var vm = this;
         vm.news = {
             title: 'Cards',
             description: 'Space object cards'
@@ -40,10 +51,14 @@
             //$/cardElement.toggleClassName('flipped');
         }
 
+        //vm.addObject = function () {
+            
+        //}
+
         activate();
 
         function activate() {
-            var promises = [getCardsCount(), getCards()];
+            var promises = [getCardsCount()];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated Cards View'); });
         }
@@ -66,11 +81,11 @@
             });
         }
 
-        function getCards() {
-            return datacontext.getCards().then(function (data) {
-                return vm.cards = data;
-            });
-        }
+        //function getCards() {
+        //    return datacontext.getCards().then(function (data) {
+        //        return vm.cards = data;
+        //    });
+        //}
 
         function setIsTarget() {
             crossdatacontext.setIsTarget(true);

@@ -194,6 +194,7 @@
             link: link,
             scope: {
                 'title': '@',
+                'carma': '@',
                 'subtitle': '@',
                 'rightText': '@',
                 'allowCollapse': '@'

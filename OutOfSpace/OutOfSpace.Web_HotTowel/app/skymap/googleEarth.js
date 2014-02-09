@@ -24,11 +24,18 @@
         ge.getNavigationControl().getScreenXY().setYUnits(ge.UNITS_PIXELS);
 
         if (isTarget) {
+
+            if (target.name == "DEATH STAR") {
+                definePlacemark(ge, target, true);
+            } else {
+                definePlacemark(ge, target, false);
+            }
+
             console.log(target);
             setTimeout(function () {
                 console.log('AbelieveAcanflyyy');
                 var oldFlyToSpeed = ge.getOptions().getFlyToSpeed();
-                ge.getOptions().setFlyToSpeed(.32); // Slow down the camera flyTo speed.
+                ge.getOptions().setFlyToSpeed(.4); // Slow down the camera flyTo speed.
                 var lookAt = ge.createLookAt('');
 
                 lookAt.set(target.lat, target.lng, target.alt,
@@ -43,12 +50,15 @@
         ge.getWindow().setVisibility(true);
     }
 
-    function definePlacemark(ge, spaceObject) {
+    function definePlacemark(ge, spaceObject, isDeathStar) {
         var placemark = ge.createPlacemark('');
 
         // Define a custom icon.
         var icon = ge.createIcon('');
-        icon.setHref('http://s5.hostingkartinok.com/uploads/images/2014/02/7d83bacb06f30d0f7d90956ea178fbc4.png');//Death Star image for now
+        if (isDeathStar) {
+            icon.setHref('http://s5.hostingkartinok.com/uploads/images/2014/02/7d83bacb06f30d0f7d90956ea178fbc4.png');//Death Star image for now
+        }
+        
         var style = ge.createStyle(''); //create a new style
         style.getIconStyle().setIcon(icon); //apply the icon to the style
         style.getIconStyle().setScale(3.0); // apply icon size
