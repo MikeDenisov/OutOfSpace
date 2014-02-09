@@ -783,6 +783,13 @@ form {
 
 
 /* Main */
+    html { height: 100% }
+    body { height: 100% }
+    .container { height: 100% }
+    .matter { height: 100% }
+    .full-height { height: 100% }
+    #skymap-view { height: 100% }
+    #skymap { height: 100% }
 
 .mainbar {
     position: relative;
@@ -790,7 +797,7 @@ form {
     margin-right: 0;
     width: auto;
     background: #fff;
-    min-height: 500px;
+    /*min-height: 500px;*/
 }
 
     .mainbar .container {
