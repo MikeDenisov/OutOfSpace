@@ -1,11 +1,17 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'cards';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', 'crossdatacontext', cards]);
+    angular.module('app').controller(controllerId, ['$http', 'common', 'datacontext', 'crossdatacontext', cards]);
 
-    function cards(common, datacontext, crossdatacontext) {
+    function cards($http, common, datacontext, crossdatacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
+
+        $http.get('http://localhost:40833/api/spaceObjects').success(function (data) {
+            //$scope.greeting = data;
+            console.log(data);
+        });
+
 
         var vm = this;
         vm.news = {
@@ -22,6 +28,7 @@
         }
 
         vm.onFlipCard = function (c) {
+
             if (c.flipped) {
                 c.flipped = false;
             } else {
@@ -40,6 +47,12 @@
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated Cards View'); });
         }
+
+        //dataservice.query( function (data) {
+            //$location.path('/');
+        //    console.log(data);
+
+        //});
 
         function goToObject(data) {
             setIsTarget();
