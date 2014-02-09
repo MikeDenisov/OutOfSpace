@@ -14,6 +14,7 @@ namespace OutOfSpace.Web.Data
     {
         public DbSet<SpaceObject> Stars { get; set; }
         public DbSet<Carma> Carma { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public static string ConnectionStringName
         {get
@@ -40,7 +41,7 @@ namespace OutOfSpace.Web.Data
         }
     }
 
-    public class OutOfSpaceDatabaseInitializer : DropCreateDatabaseAlways<DataContext>
+    public class OutOfSpaceDatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {
