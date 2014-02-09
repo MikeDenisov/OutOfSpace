@@ -22,11 +22,12 @@
                 .then(function () {
                     log('Activated Skymap View');
                     initGoogleEarth(vm.isTarget, vm.target);
+                    setIsTarget();
                 });
         }
 
         function setIsTarget() {
-            crossdatacontext.setIsTarget(true);
+            crossdatacontext.setIsTarget(false);
         }
 
         function getIsTarget() {
