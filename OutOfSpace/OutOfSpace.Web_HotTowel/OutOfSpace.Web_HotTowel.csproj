@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CarmaController.cs" />
     <Compile Include="Controllers\SpaceObjectsController.cs" />
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\GenericRepository.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="Models\Carma.cs" />
     <Compile Include="Models\Interfaces\IHasCarma.cs" />
     <Compile Include="Models\SpaceObject.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
