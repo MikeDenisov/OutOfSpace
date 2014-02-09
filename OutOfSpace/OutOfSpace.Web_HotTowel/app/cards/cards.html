@@ -31,9 +31,9 @@
                         </div>
                     </div>
                 </div>-->
-                <div class="col-md-6" data-ng-repeat="c in vm.cards">
-                    <div class="widget flip-container">
-                        <a ng-click="vm.onHeaderClick(c)">
+                <div class="col-md-4 flip-container" data-ng-repeat="c in vm.cards">
+                    <div class="widget {{ c.flipped ? 'flipped' : '' }}" id="card">
+                        <a ng-click=" vm.onheaderclick(c)">
                             <div data-cc-widget-header title="{{c.name}}"
                                  allow-collapse="false"></div>
                         </a>
@@ -47,7 +47,9 @@
                             <small>{{c.range}}</small>
                             <small>{{c.tilt}}</small>
                         </div>
-                        <div class="widget-foot">
+                        <div class="widget-foot" id="flipper">
+                            <a id="flip" ng-click="vm.onFlipCard(c)">{{ c.flipped ? 'Flip the card back' : 'Flip the card' }}</a>
+
                             <div class="clearfix"></div>
                         </div>
                     </div>
