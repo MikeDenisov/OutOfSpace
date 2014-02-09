@@ -1,4 +1,4 @@
-﻿function initGoogleEarth () {
+﻿function initGoogleEarth (isTarget, target) {
 //    'use strict';
     var ge;
 
@@ -14,6 +14,7 @@
     function initCB(instance) {
         ge = instance;
         ge.getOptions().setMapType(ge.MAP_TYPE_SKY);
+        ge.getOptions().setFlyToSpeed(ge.SPEED_TELEPORT);
         ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
 
         //ge.getSun().setVisibility(true);
@@ -22,20 +23,24 @@
         ge.getNavigationControl().getScreenXY().setXUnits(ge.UNITS_PIXELS);
         ge.getNavigationControl().getScreenXY().setYUnits(ge.UNITS_PIXELS);
 
+        if (isTarget) {
+            console.log(target);
+            setTimeout(function () {
+                console.log('AbelieveAcanflyyy');
+                var oldFlyToSpeed = ge.getOptions().getFlyToSpeed();
+                ge.getOptions().setFlyToSpeed(.32); // Slow down the camera flyTo speed.
+                var lookAt = ge.createLookAt('');
+
+                lookAt.set(target.lat, target.lng, target.alt,
+                target.alt_enum, target.heading,
+                target.tilt, target.range);
+
+                ge.getView().setAbstractView(lookAt);
+                ge.getOptions().setFlyToSpeed(oldFlyToSpeed);
+            }, 2000)
+        }
+
         ge.getWindow().setVisibility(true);
-    }
-    function flyToObject(ge, spaceObject) {
-
-        var oldFlyToSpeed = ge.getOptions().getFlyToSpeed();
-        ge.getOptions().setFlyToSpeed(.32); // Slow down the camera flyTo speed.
-        var lookAt = ge.createLookAt('');
-
-        lookAt.set(spaceObject.lat, spaceObject.lng, spaceObject.alt,
-        spaceObject.alt_enum, spaceObject.heading,
-        spaceObject.tilt, spaceObject.range);
-
-        ge.getView().setAbstractView(lookAt);
-        ge.getOptions().setFlyToSpeed(oldFlyToSpeed);
     }
 
     function definePlacemark(ge, spaceObject) {

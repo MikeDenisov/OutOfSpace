@@ -16,7 +16,7 @@
     ]);
     
     // Handle routing errors and success events
-    app.run(['$route',  function ($route) {
+    app.run(['$route', '$location', function ($route) {
             // Include $route to kick start the router.
         }]);        
 })();

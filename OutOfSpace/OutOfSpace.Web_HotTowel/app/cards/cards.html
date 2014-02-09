@@ -33,8 +33,10 @@
                 </div>-->
                 <div class="col-md-6" data-ng-repeat="c in vm.cards">
                     <div class="widget">
-                        <div data-cc-widget-header title="{{c.name}}"
-                             allow-collapse="false"></div>
+                        <a ng-click="vm.onHeaderClick(c)">
+                            <div data-cc-widget-header title="{{c.name}}"
+                                 allow-collapse="false"></div>
+                        </a>
                         <div class="widget-content text-center text-info">
                             <small>{{c.description}}</small>
                             <small>{{c.lat}}</small>
