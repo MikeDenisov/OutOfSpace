@@ -149,6 +149,9 @@ small {
         color: white;
     }
 
+#card img{
+    width: 100%;
+}
 .list-flow {
     margin: 6px;
     float: left;
