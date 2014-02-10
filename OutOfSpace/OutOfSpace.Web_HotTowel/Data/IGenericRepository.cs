@@ -12,5 +12,6 @@ namespace OutOfSpace.Web.Data
         T GetById(Int64 id);
         IEnumerable<T> All();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
+        void Save();
     }
 }
