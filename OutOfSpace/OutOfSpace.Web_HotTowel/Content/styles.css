@@ -134,6 +134,12 @@ small {
     margin-right: 12px;
 }
 
+.page-title.pull-left {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: none!important;
+}
 .right {
     clear: right;
     float: right;

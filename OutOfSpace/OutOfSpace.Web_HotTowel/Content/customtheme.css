@@ -1007,6 +1007,10 @@ body { height: 100% }
         margin-bottom: 10px;
     }
 
+.pull-right {
+    width: 59px;
+}
+width: 59px;
 /* Today datas */
 
 .today-datas {
@@ -1300,6 +1304,8 @@ body { height: 100% }
 .object-carma {
     background: #D5D5D5;
     padding: 8px 15px 8px 15px;
+    float: right;
+    width: 69%;
 }
 .carma-increase {
     background: #00BDA4;
@@ -1313,17 +1319,20 @@ body { height: 100% }
     padding: 5px 6px 0px 6px;
     font-size: 9px;
     height: 19px;
-    top: -3px;
     position: relative;
     color: #FFF;
 }
 
 #inner1{
 float:left; 
+width: 31%;
 }
 #inner2{
 float:left; 
 clear: left;
+width: 31%;
 } 
-
+.content {
+    padding-top: 50px;
+}
 /*#endregion */
