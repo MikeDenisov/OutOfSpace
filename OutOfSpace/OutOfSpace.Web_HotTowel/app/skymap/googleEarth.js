@@ -1,15 +1,12 @@
 ﻿function initGoogleEarth (isTarget, target) {
-//    'use strict';
+    'use strict';
     var ge;
 
     function init() {
-        //q.when()
         return google.earth.createInstance('skymap', initCB, failureCB);
     }
     function failureCB(errorCode) {
-        //TODO: error handling
         console.log("Error in goole.earth.createInstance()", errorCode);
-        //init();
     }
     function initCB(instance) {
         ge = instance;
@@ -19,21 +16,12 @@
 
         //ge.getSun().setVisibility(true);
         //ge.getOptions().setAtmosphereVisibility(true);
-        //FIXME: Add a fucking sun! or not..
+        //FIXME: Think about adding the sun..
         ge.getNavigationControl().getScreenXY().setXUnits(ge.UNITS_PIXELS);
         ge.getNavigationControl().getScreenXY().setYUnits(ge.UNITS_PIXELS);
 
         if (isTarget) {
-
-            if (target.name == "DEATH STAR") {
-                definePlacemark(ge, target, true);
-            } else {
-                definePlacemark(ge, target, false);
-            }
-
-            console.log(target);
             setTimeout(function () {
-                console.log('AbelieveAcanflyyy');
                 var oldFlyToSpeed = ge.getOptions().getFlyToSpeed();
                 ge.getOptions().setFlyToSpeed(.4); // Slow down the camera flyTo speed.
                 var lookAt = ge.createLookAt('');
@@ -50,14 +38,12 @@
         ge.getWindow().setVisibility(true);
     }
 
-    function definePlacemark(ge, spaceObject, isDeathStar) {
+    function definePlacemark(ge, spaceObject) {
         var placemark = ge.createPlacemark('');
 
         // Define a custom icon.
         var icon = ge.createIcon('');
-        if (isDeathStar) {
-            icon.setHref('http://s5.hostingkartinok.com/uploads/images/2014/02/7d83bacb06f30d0f7d90956ea178fbc4.png');//Death Star image for now
-        }
+        icon.setHref('');//image for placemark
         
         var style = ge.createStyle(''); //create a new style
         style.getIconStyle().setIcon(icon); //apply the icon to the style

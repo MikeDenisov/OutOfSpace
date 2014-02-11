@@ -88,7 +88,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\services\dataservice.js" />
     <Content Include="app\skymap\googleEarth.js" />
     <Content Include="app\skymap\skymap.html" />
     <Content Include="app\skymap\skymap.js" />

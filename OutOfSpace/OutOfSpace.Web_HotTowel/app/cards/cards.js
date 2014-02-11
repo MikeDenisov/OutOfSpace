@@ -11,18 +11,11 @@
         var vm = this;
 
         $http.get('http://localhost:40833/api/spaceObjects').success(function (data) {
-            //$scope.greeting = data;
             console.log(data);
             return vm.cards = data;
         });
 
         vm.addObject = function () {
-            //var d = $dialog.dialog($scope.opts);
-            //d.open().then(function (result) {
-            //    if (result) {
-            //        alert('dialog closed with result: ' + result);
-            //    }
-            //});
         };
 
         vm.news = {
@@ -39,21 +32,12 @@
         }
 
         vm.onFlipCard = function (c) {
-
             if (c.flipped) {
                 c.flipped = false;
             } else {
                 c.flipped = true;
             }
-            
-            //var $cardElement = $event.target.parentNode.parentNode;
-            //console.log($cardElement);
-            //$/cardElement.toggleClassName('flipped');
         }
-
-        //vm.addObject = function () {
-            
-        //}
 
         activate();
 
@@ -62,12 +46,6 @@
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated Cards View'); });
         }
-
-        //dataservice.query( function (data) {
-            //$location.path('/');
-        //    console.log(data);
-
-        //});
 
         function goToObject(data) {
             setIsTarget();
@@ -80,12 +58,6 @@
                 return vm.cardsCount = data;
             });
         }
-
-        //function getCards() {
-        //    return datacontext.getCards().then(function (data) {
-        //        return vm.cards = data;
-        //    });
-        //}
 
         function setIsTarget() {
             crossdatacontext.setIsTarget(true);

@@ -1,11 +1,11 @@
 * {
-    /*-webkit-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
     -ms-box-shadow: none !important;
     box-shadow: none !important;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
     -webkit-text-shadow: none !important;
     -ms-text-shadow: none !important;
-    text-shadow: none !important;*/
+    text-shadow: none !important;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     /*font-weight: 400;*/
@@ -783,13 +783,33 @@ form {
 
 
 /* Main */
-html { height: 100% }
-body { height: 100% }
-.container { height: 100% }
-.matter { height: 100% }
-.full-height { height: 100% }
-#skymap-view { height: 100% }
-#skymap { height: 100% }
+html { 
+    height: 100%;
+}
+
+body { 
+    height: 100%;
+}
+
+.container { 
+    height: 100%;
+}
+
+.matter { 
+    height: 100%;
+}
+
+.full-height { 
+    height: 100%;
+}
+
+#skymap-view { 
+    height: 100%;
+}
+
+#skymap { 
+    height: 100%;
+}
 
 .back {
     display:none;
@@ -1323,14 +1343,14 @@ width: 59px;
     color: #FFF;
 }
 
-#inner1{
-float:left; 
-width: 31%;
+.carma-increase {
+    float:left; 
+    width: 31%;
 }
-#inner2{
-float:left; 
-clear: left;
-width: 31%;
+.carma-decrease {
+    float:left; 
+    clear: left;
+    width: 31%;
 } 
 .content {
     padding-top: 50px;

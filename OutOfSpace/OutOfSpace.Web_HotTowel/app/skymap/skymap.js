@@ -3,8 +3,6 @@
     var controllerId = 'skymap';
     angular.module('app').controller(controllerId, ['common', 'crossdatacontext', skymap]);
 
-    
-
     function skymap(common, crossdatacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);

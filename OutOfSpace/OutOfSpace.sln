@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web", "OutOfSpace.Web\OutOfSpace.Web.csproj", "{FB6C503C-C02D-48A9-B92C-449159F57A42}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web_HotTowel", "OutOfSpace.Web_HotTowel\OutOfSpace.Web_HotTowel.csproj", "{617B9875-32D8-4F9C-BA67-460F6BA5425B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web", "OutOfSpace.Web_HotTowel\OutOfSpace.Web.csproj", "{617B9875-32D8-4F9C-BA67-460F6BA5425B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB6C503C-C02D-48A9-B92C-449159F57A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB6C503C-C02D-48A9-B92C-449159F57A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB6C503C-C02D-48A9-B92C-449159F57A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB6C503C-C02D-48A9-B92C-449159F57A42}.Release|Any CPU.Build.0 = Release|Any CPU
 		{617B9875-32D8-4F9C-BA67-460F6BA5425B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{617B9875-32D8-4F9C-BA67-460F6BA5425B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{617B9875-32D8-4F9C-BA67-460F6BA5425B}.Release|Any CPU.ActiveCfg = Release|Any CPU
