@@ -23,6 +23,7 @@ namespace OutOfSpace.Web.Controllers
             {
                 carmaObj.Increase();
                 repository.Update(carmaObj);
+                repository.Save();
                 return carmaObj;
             }
             throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -39,6 +40,7 @@ namespace OutOfSpace.Web.Controllers
                 {
                     carmaObj.Decrease();
                     repository.Update(carmaObj);
+                    repository.Save();
                     return carmaObj;
                 }
                 catch (Exception e)

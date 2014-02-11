@@ -20,7 +20,7 @@ namespace OutOfSpace.Web.Data
         public virtual T Add(T entity)
         {
             _dbset.Add(entity);
-            _context.SaveChanges();
+            //_context.SaveChanges();
             return entity;
         }
 
@@ -28,7 +28,7 @@ namespace OutOfSpace.Web.Data
         {
             var entry = _context.Entry(entity);
             entry.State = System.Data.Entity.EntityState.Deleted;
-            _context.SaveChanges();
+            //_context.SaveChanges();
         }
 
         public virtual void Update(T entity)
@@ -36,7 +36,7 @@ namespace OutOfSpace.Web.Data
             var entry = _context.Entry(entity);
             _dbset.Attach(entity);
             entry.State = System.Data.Entity.EntityState.Modified;
-            _context.SaveChanges();
+            //_context.SaveChanges();
         }
 
         public virtual T GetById(Int64 id)
@@ -52,6 +52,31 @@ namespace OutOfSpace.Web.Data
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
         {
             return _dbset.Where(predicate);
+        }
+
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
+
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

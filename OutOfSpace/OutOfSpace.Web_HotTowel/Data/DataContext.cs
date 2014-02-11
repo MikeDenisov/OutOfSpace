@@ -42,7 +42,7 @@ namespace OutOfSpace.Web.Data
         }
     }
 
-    public class OutOfSpaceDatabaseInitializer : DropCreateDatabaseAlways<DataContext>
+    public class OutOfSpaceDatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
         protected override void Seed(DataContext context)
         {

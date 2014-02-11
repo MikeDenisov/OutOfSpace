@@ -46,6 +46,7 @@ namespace OutOfSpace.Web.Controllers
                 try
                 {
                     var createdObject = repository.Add(spaceObject);
+                    repository.Save();
                     return Request.CreateResponse(HttpStatusCode.Created, createdObject);                                        
                 }
                 catch (Exception e)
@@ -65,6 +66,7 @@ namespace OutOfSpace.Web.Controllers
                 try
                 {
                     repository.Update(spaceObject);
+                    repository.Save();
                     return Request.CreateResponse(HttpStatusCode.NoContent);
                 }
                 catch (Exception e)
@@ -87,6 +89,7 @@ namespace OutOfSpace.Web.Controllers
                     try
                     {
                         repository.Delete(spaceObject);
+                        repository.Save();
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
                     catch (Exception e)
