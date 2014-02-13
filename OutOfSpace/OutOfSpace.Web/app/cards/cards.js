@@ -1,34 +1,70 @@
 ﻿(function () {
     'use strict';
-    var controllerId = 'dashboard';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', dashboard]);
+    var controllerId = 'cards';
+    angular.module('app').controller(controllerId, ['$scope', '$modal', '$http', 'common', 'datacontext', 'crossdatacontext', cards]);
 
-    function dashboard(common, datacontext) {
+    function cards($scope, $modal, $http, common, datacontext, crossdatacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
+
         var vm = this;
-        vm.messageCount = 0;
-        vm.people = [];
+
+        $http.get('http://localhost:40833/api/spaceObjects').success(function (data) {
+            console.log(data);
+            return vm.cards = data;
+        });
+
+        vm.addObject = function () {
+        };
+
+        vm.news = {
+            title: 'Cards',
+            description: 'Space object cards'
+        };
+        vm.cardsCount = 0;
+        vm.cards = [];
+        vm.title = 'Cards';
+        vm.flipped = false;
+
+        vm.onHeaderClick = function (data) {
+            goToObject(data);
+        }
+
+        vm.onFlipCard = function (c) {
+            if (c.flipped) {
+                c.flipped = false;
+            } else {
+                c.flipped = true;
+            }
+        }
 
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
+            var promises = [getCardsCount()];
             common.activateController(promises, controllerId)
-                .then(function () { log('Activated Dashboard View'); });
+                .then(function () { log('Activated Cards View'); });
         }
 
-        function getMessageCount() {
-            return datacontext.getMessageCount().then(function (data) {
-                return vm.messageCount = data;
+        function goToObject(data) {
+            setIsTarget();
+            setTarget(data);
+            window.location.hash = '/skymap';
+        }
+
+        function getCardsCount() {
+            return datacontext.getCardsCount().then(function (data) {
+                return vm.cardsCount = data;
             });
         }
 
-        function getPeople() {
-            return datacontext.getPeople().then(function (data) {
-                return vm.people = data;
-            });
+        function setIsTarget() {
+            crossdatacontext.setIsTarget(true);
+        }
+
+        function setTarget(data) {
+            crossdatacontext.setTarget(data);
         }
     }
 })();

@@ -6,6 +6,7 @@
         'ngAnimate',        // animations
         'ngRoute',          // routing
         'ngSanitize',       // sanitizes html bindings (ex: sidebar.js)
+        'ngResource',       // resource :)
 
         // Custom modules 
         'common',           // common functions, logger, spinner
@@ -16,7 +17,7 @@
     ]);
     
     // Handle routing errors and success events
-    app.run(['$route',  function ($route) {
+    app.run(['$route', function ($route) {
             // Include $route to kick start the router.
         }]);        
 })();

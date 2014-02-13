@@ -36,8 +36,9 @@
         return directive;
 
         function link(scope, element, attrs) {
-            var $sidebarInner = element.find('.sidebar-inner');
+            var $sidebarInner = element.find('.sidebar-inner').parent();
             var $dropdownElement = element.find('.sidebar-dropdown a');
+            var $mainbarElement = element.find('.mainbar');
             element.addClass('sidebar');
             $dropdownElement.click(dropdown);
 
@@ -45,16 +46,23 @@
                 var dropClass = 'dropy';
                 e.preventDefault();
                 if (!$dropdownElement.hasClass(dropClass)) {
-                    hideAllSidebars();
-                    $sidebarInner.slideDown(350);
+                    //hideAllSidebars();
+                    //$sidebarInner.slideDown(350);
+                    $sidebarInner.toggle( "slide" );
                     $dropdownElement.addClass(dropClass);
+                    console.log($mainbarElement.css("margin-left"));
+                    $mainbarElement.css("margin-left", "-=200");
+                    console.log($mainbarElement.css("margin-left"));
                 } else if ($dropdownElement.hasClass(dropClass)) {
                     $dropdownElement.removeClass(dropClass);
-                    $sidebarInner.slideUp(350);
+                    //$sidebarInner.slideUp(350);
+                    $sidebarInner.toggle("slide");
+                    $mainbarElement.css("margin-left", "0px");
                 }
 
                 function hideAllSidebars() {
-                    $sidebarInner.slideUp(350);
+                    //$sidebarInner.slideUp(350);
+                    $sidebarInner.toggle("slide");
                     $('.sidebar-dropdown a').removeClass(dropClass);
                 }
             }
@@ -186,6 +194,7 @@
             link: link,
             scope: {
                 'title': '@',
+                'carma': '@',
                 'subtitle': '@',
                 'rightText': '@',
                 'allowCollapse': '@'

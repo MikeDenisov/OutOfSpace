@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
-using System.Web.Razor.Text;
-using System.Web.Routing;
-using OutOfSpace.API.Data;
-using OutOfSpace.API.Models;
-using System.Linq;
+using System.Web.Security;
+using OutOfSpace.Web.Data;
+using OutOfSpace.Web.Models;
 
-namespace OutOfSpace.API.Controllers
+namespace OutOfSpace.Web.Controllers
 {
     [RoutePrefix("api/spaceObjects")]
     public class SpaceObjectsController : ApiController
@@ -21,7 +21,7 @@ namespace OutOfSpace.API.Controllers
         [Route("")]
         public IEnumerable<SpaceObject> GetSpaceObjects()
         {
-            return repository.All();
+            return ((DbSet<SpaceObject>)repository.All()).Include(p => p.Carma).Include(p => p.Photos);
         }
 
         [HttpGet]
@@ -46,6 +46,7 @@ namespace OutOfSpace.API.Controllers
                 try
                 {
                     var createdObject = repository.Add(spaceObject);
+                    repository.Save();
                     return Request.CreateResponse(HttpStatusCode.Created, createdObject);                                        
                 }
                 catch (Exception e)
@@ -65,6 +66,7 @@ namespace OutOfSpace.API.Controllers
                 try
                 {
                     repository.Update(spaceObject);
+                    repository.Save();
                     return Request.CreateResponse(HttpStatusCode.NoContent);
                 }
                 catch (Exception e)
@@ -87,6 +89,7 @@ namespace OutOfSpace.API.Controllers
                     try
                     {
                         repository.Delete(spaceObject);
+                        repository.Save();
                         return Request.CreateResponse(HttpStatusCode.OK);
                     }
                     catch (Exception e)

@@ -1,11 +1,11 @@
 * {
-    /*-webkit-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
     -ms-box-shadow: none !important;
     box-shadow: none !important;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
     -webkit-text-shadow: none !important;
     -ms-text-shadow: none !important;
-    text-shadow: none !important;*/
+    text-shadow: none !important;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     /*font-weight: 400;*/
@@ -68,7 +68,7 @@ body {
     line-height: 23px;
     color: #666;
     background: #111;
-    padding-top: 45px;
+    /*padding-top: 45px;*/
     -webkit-font-smoothing: antialiased;
 }
 
@@ -427,6 +427,10 @@ form {
     float: right;
 }
 
+.row {
+    margin: 2em;
+}
+
 /* Dropdown menu */
 
 .dropdown-big .dropdown-menu {
@@ -567,7 +571,8 @@ form {
 
     .sidebar ul {
         padding: 0;
-        margin: 0;
+        /*margin: 0;*/
+        margin-top: 8px;
         list-style-type: none;
     }
 
@@ -729,7 +734,7 @@ form {
     /* Sidebar widget */
 
     .sidebar .sidebar-widget {
-        padding: 10px 5px;
+        /*padding: 10px 5px;*/
     }
 
     .sidebar .ui-datepicker {
@@ -778,6 +783,46 @@ form {
 
 
 /* Main */
+html { 
+    height: 100%;
+}
+
+body { 
+    height: 100%;
+}
+
+.container { 
+    height: 100%;
+}
+
+.matter { 
+    height: 100%;
+}
+
+.full-height { 
+    height: 100%;
+}
+
+#skymap-view { 
+    height: 100%;
+}
+
+#skymap { 
+    height: 100%;
+}
+
+.back {
+    display:none;
+}
+
+.flipped .back {
+    display:block;
+}
+
+.flipped .front {
+    display:none;
+}
+
 
 .mainbar {
     position: relative;
@@ -785,11 +830,12 @@ form {
     margin-right: 0;
     width: auto;
     background: #fff;
-    min-height: 900px;
+    /*min-height: 500px;*/
 }
 
     .mainbar .container {
         width: 100%;
+        /*padding: 0 !important;*/
         padding: 0 !important;
     }
 
@@ -831,7 +877,7 @@ form {
 
 .mainbar .matter {
     border-top: 0px solid #ddd;
-    margin: 2em;
+    /*margin: 2em;*/
 }
 
 /* Widget */
@@ -876,7 +922,7 @@ form {
     }
 
     .widget .widget-head {
-        background-color: #f5f5f5;
+        /*background-color: #f5f5f5;*/
         border: 1px solid #ddd;
         color: #777;
         font-size: 18px;
@@ -981,6 +1027,10 @@ form {
         margin-bottom: 10px;
     }
 
+.pull-right {
+    width: 59px;
+}
+width: 59px;
 /* Today datas */
 
 .today-datas {
@@ -1271,5 +1321,38 @@ form {
 
 /* Users ends */
 
+.object-carma {
+    background: #D5D5D5;
+    padding: 8px 15px 8px 15px;
+    float: right;
+    width: 69%;
+}
+.carma-increase {
+    background: #00BDA4;
+    padding: 5px 6px 0px 6px;
+    font-size: 9px;
+    height: 20px;
+    color: #FFF;
+}
+.carma-decrease {
+    background: #FF5E39;
+    padding: 5px 6px 0px 6px;
+    font-size: 9px;
+    height: 19px;
+    position: relative;
+    color: #FFF;
+}
 
+.carma-increase {
+    float:left; 
+    width: 31%;
+}
+.carma-decrease {
+    float:left; 
+    clear: left;
+    width: 31%;
+} 
+.content {
+    padding-top: 50px;
+}
 /*#endregion */

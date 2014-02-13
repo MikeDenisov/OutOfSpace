@@ -13,7 +13,7 @@
         routes.forEach(function (r) {
             $routeProvider.when(r.url, r.config);
         });
-        $routeProvider.otherwise({ redirectTo: '/cards' });
+        $routeProvider.otherwise({ redirectTo: '/' });
     }
 
     // Define the routes 
@@ -26,7 +26,7 @@
                     title: 'cards',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-cards"></i> Cards'
+                        content: '<i class="fa fa-desktop"></i> Cards'
                     }
                 }
             }, {
@@ -36,7 +36,7 @@
                     templateUrl: 'app/skymap/skymap.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-skymap"></i> Skymap'
+                        content: '<i class="fa fa-star"></i> Skymap'
                     }
                 }
             }

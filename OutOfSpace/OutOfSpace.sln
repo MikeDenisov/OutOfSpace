@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web", "OutOfSpace.Web_HotTowel\OutOfSpace.Web.csproj", "{617B9875-32D8-4F9C-BA67-460F6BA5425B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfSpace.Web", "OutOfSpace.Web\OutOfSpace.Web.csproj", "{617B9875-32D8-4F9C-BA67-460F6BA5425B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
