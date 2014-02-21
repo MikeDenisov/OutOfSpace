@@ -103,8 +103,8 @@
     <Content Include="app\cards\cards.js" />
     <Content Include="app\layout\shell.html" />
     <Content Include="app\layout\shell.js" />
-    <Content Include="app\layout\sidebar.html" />
-    <Content Include="app\layout\sidebar.js" />
+    <Content Include="app\layout\navbar.html" />
+    <Content Include="app\layout\navbar.js" />
     <Content Include="app\layout\topnav.html" />
     <Content Include="app\layout\widgetheader.html" />
     <Content Include="app\services\datacontext.js" />
