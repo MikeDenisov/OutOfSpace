@@ -31,6 +31,10 @@ input, select {
     text-shadow: none !important;
 }
 
+.navbar-toggle {
+    display: inline-block;
+}
+
 form * {
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }

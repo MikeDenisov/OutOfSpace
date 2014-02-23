@@ -10,7 +10,7 @@ namespace OutOfSpace.Web.App_Start
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            config.SuppressDefaultHostAuthentication();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -22,6 +22,10 @@ namespace OutOfSpace.Web.App_Start
 
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling =
+                Newtonsoft.Json.PreserveReferencesHandling.All;
         }
     }
 }

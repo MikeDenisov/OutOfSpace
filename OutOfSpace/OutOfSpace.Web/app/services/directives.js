@@ -37,7 +37,7 @@
 
         function link(scope, element, attrs) {
             var $sidebarInner = element.find('.sidebar-inner').parent();
-            var $dropdownElement = element.find('.sidebar-dropdown a');
+            var $dropdownElement = element.find('a.navbar-btn');
             var $mainbarElement = element.find('.mainbar');
             element.addClass('sidebar');
             $dropdownElement.click(dropdown);
@@ -48,16 +48,16 @@
                 if (!$dropdownElement.hasClass(dropClass)) {
                     //hideAllSidebars();
                     //$sidebarInner.slideDown(350);
-                    $sidebarInner.toggle( "slide" );
+                    //$sidebarInner.toggle( "slide" );
                     $dropdownElement.addClass(dropClass);
-                    console.log($mainbarElement.css("margin-left"));
-                    $mainbarElement.css("margin-left", "-=200");
-                    console.log($mainbarElement.css("margin-left"));
+                    //console.log($mainbarElement.css("margin-left"));
+                    //$mainbarElement.css("margin-left", "-=200");
+                    //console.log($mainbarElement.css("margin-left"));
                 } else if ($dropdownElement.hasClass(dropClass)) {
                     $dropdownElement.removeClass(dropClass);
                     //$sidebarInner.slideUp(350);
-                    $sidebarInner.toggle("slide");
-                    $mainbarElement.css("margin-left", "0px");
+                    //$sidebarInner.toggle("slide");
+                    //$mainbarElement.css("margin-left", "0px");
                 }
 
                 function hideAllSidebars() {
