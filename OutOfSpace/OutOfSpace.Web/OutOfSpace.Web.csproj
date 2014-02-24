@@ -197,6 +197,7 @@
     <Content Include="Content\images\AngularJS-small.png" />
     <Content Include="Content\images\breezelogo.png" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\rocket.png" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\toastr.css">
       <DependentUpon>toastr.less</DependentUpon>
